@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whitney McShan</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Georgia", serif;
+            background: #111;
+            color: #e5e5e5;
+        }
+
+        header {
+            background: #1a1a1a;
+            color: #f0f0f0;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        nav {
+            background: #181818;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 12px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        nav a {
+            color: #bbb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d14;
+        }
+
+        section {
+            display: none;
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: 30px auto;
+            background: #1a1a1a;
+            border-radius: 10px;
+            border: 1px solid #2a2a2a;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        h2 {
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #cfcfcf;
+        }
+
+        .image-row {
+            display: flex;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .image-row img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 6px;
+            opacity: 0.9;
+        }
+
+        .image-row img:hover {
+            opacity: 1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #2a2a2a;
+            color: #eee;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3a3a3a;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Whitney McShan</h1>
+        <p>Something something horror genre related quote </p>
+    </header>
+
+    <nav>
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('books')">Work</a>
+        <a onclick="showSection('about')">About</a>
+        <a onclick="showSection('contact')">Contact</a>
+    </nav>
+
+    <section id="home" class="active">
+        <h2>Welcome</h2>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
+            Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+            Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
+        </p>
+
+        <p>
+            Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
+            Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue.
+        </p>
+
+        <div class="image-row">
+            <img src="https://via.placeholder.com/250x180" alt="placeholder" />
+            <img src="https://via.placeholder.com/250x180" alt="placeholder" />
+            <img src="https://via.placeholder.com/250x180" alt="placeholder" />
+        </div>
+
+        <p>
+            Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.
+            Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales.
+        </p>
+
+        <p>
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+            Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales
+            hendrerit.
+        </p>
+    </section>
+
+    <section id="books">
+        <h2>Books</h2>
+
+        <div class="book">
+            <img src="https://via.placeholder.com/120x180" alt="Book cover" />
+            <h3>Book Title One</h3>
+            <p>A short description of the book goes here.</p>
+            <button onclick="alert('Link to buy book')">Buy</button>
+        </div>
+
+        <div class="book">
+            <img src="https://via.placeholder.com/120x180" alt="Book cover" />
+            <h3>Book Title Two</h3>
+            <p>Another short description of a different book.</p>
+            <button onclick="alert('Link to buy book')">Buy</button>
+        </div>
+
+    </section>
+
+    <section id="about">
+        <h2>About the Author</h2>
+        <p>
+            Whitney McShan lives in New Braunfels TX with her her son, her wife, and her two black cats.
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: wmcshan@gmail.com</p>
+        <button onclick="copyEmail()">Copy Email</button>
+    </section>
+
+    <footer>
+        <p>© 2026 </p>
+    </footer>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+
+        function copyEmail() {
+            navigator.clipboard.writeText("author@email.com");
+            alert("Email copied!");
+        }
+    </script>
+
+</body>
+
+</html>
